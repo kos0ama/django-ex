@@ -12,16 +12,6 @@ def index(request):
     hostname = os.getenv('HOSTNAME', 'unknown')
     PageView.objects.create(hostname=hostname)
 
-    return render(request, 'welcome/index.html', {
-        'hostname': hostname,
-        'database': database.info(),
-        'count': PageView.objects.count()
-    })
-
-def index2(request):
-    hostname = os.getenv('HOSTNAME', 'unknown')
-    PageView.objects.create(hostname=hostname)
-
     return render(request, 'welcome/index2.html', {
         'hostname': hostname,
         'database': database.info(),
